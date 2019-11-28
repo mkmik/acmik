@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# re-run the current file when the current file changes
+# pass an argument to specify the interpreter explicitly/
+#
+# The window will be cleared out between each execution.
+
+exec arepa -t "fswait $samfile" $1 $samfile
