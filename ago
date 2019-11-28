@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Run a command of the go toolchain and re-execute it whenever
+# any file belonging to the current Go project changes.
+#
+# examples:
+#
+#     ago test
+#     ago install
+
+exec arepa -t waigo go "$@"
