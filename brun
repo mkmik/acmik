@@ -1,0 +1,15 @@
+#!/usr/local/plan9/bin/rc
+
+# re-run a program when the binary changes.
+# Stdout is not cleared between each execution.
+
+. $PLAN9/lib/acme.rc
+
+if(! ~ $% *+Brun) {
+  newname=`{dirname $%}
+  newwindow
+  winname $newname/-Brun
+}
+
+echo running $1 | winwrite data
+echo $1 | entr -r $1| winwrite data
