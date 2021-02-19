@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dir=$(git rev-parse --show-toplevel)
+
+if [ -z "$dir" ]; then
+  echo "Cannot find git home"
+  exit 1
+fi
+
+cd $dir
+
+arepa cargo "${@}"
